@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     void getCurrentData() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BaseUrl)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())// for serialization and deserialization of objects.
                 .build();
         WeatherService service = retrofit.create(WeatherService.class);
         Call<WeatherResponse> call = service.getCurrentWeatherData(lat, lon, AppId);
